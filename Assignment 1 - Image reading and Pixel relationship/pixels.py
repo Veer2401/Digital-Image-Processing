@@ -27,6 +27,25 @@ nd = [(x-1,y-1),(x-1,y+1),(x+1,y-1),(x+1,y+1)]
 #8-neighbourhood
 n8 = n4+nd
 
+#m-neighbourhood
+
+m = n4.copy()
+
+for q in nd:
+    i, j = q
+
+    common = False
+
+    n4_q = [(i-1, j), (i+1, j), (i, j+1), (i, j-1)]
+
+    for p in n4:
+        if p in n4_q:
+            common = True
+            break
+
+    if common == False:
+        m.append(q)
+
 print("4 Neighbours: ")
 
 for i,j in n4:
@@ -43,5 +62,12 @@ print("8 neighbourhood ")
 
 for i,j in n8:
     print(f"{i},{j} = {image[i,j]}")
+
+print("\n")
+
+print("m - neighbourhood")
+
+for i,j in m:
+     print(f"{i},{j} = {image[i,j]}")
 
 print("\n")

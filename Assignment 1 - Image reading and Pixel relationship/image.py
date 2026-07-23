@@ -7,5 +7,13 @@ if img is None:
 
 else:
     cv2.imshow("Image ", img)
+    cv2.imwrite
+
+     # Save the image
+    output_path = "/Users/veer/Desktop/saved_image.jpg"
+    cv2.imwrite(output_path, img)
+
+    print("Image saved successfully at:")
+    print(output_path)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
